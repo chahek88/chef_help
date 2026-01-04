@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 260 40% 95%;
+    --foreground: 260 25% 20%;
+
+    --card: 260 35% 97%;
+    --card-foreground: 260 25% 20%;
+
+    --popover: 260 35% 97%;
+    --popover-foreground: 260 25% 20%;
+
+    --primary: 260 45% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 30% 90%;
+    --secondary-foreground: 260 25% 25%;
+
+    --muted: 260 25% 90%;
+    --muted-foreground: 260 15% 40%;
+
+    --accent: 320 50% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 25% 85%;
+    --input: 260 25% 85%;
+    --ring: 260 45% 55%;
+
+    --radius: 0.75rem;
+
+    --sage: 260 45% 55%;
+    --sage-light: 260 35% 92%;
+    --cream: 260 40% 95%;
+    --terracotta: 320 50% 55%;
+    --warm-brown: 260 30% 35%;
+    --olive: 280 35% 50%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --shadow-soft: 0 4px 20px -4px hsl(260 25% 20% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(260 25% 20% / 0.15);
+    --shadow-hover: 0 12px 40px -8px hsl(260 25% 20% / 0.22);
+  }
+
+  .dark {
+    --background: 30 15% 12%;
+    --foreground: 45 20% 92%;
+
+    --card: 30 15% 16%;
+    --card-foreground: 45 20% 92%;
+
+    --popover: 30 15% 16%;
+    --popover-foreground: 45 20% 92%;
+
+    --primary: 145 30% 50%;
+    --primary-foreground: 30 15% 12%;
+
+    --secondary: 30 15% 22%;
+    --secondary-foreground: 45 20% 92%;
+
+    --muted: 30 12% 20%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 18 55% 60%;
+    --accent-foreground: 30 15% 12%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 45 20% 92%;
+
+    --border: 30 12% 25%;
+    --input: 30 12% 25%;
+    --ring: 145 30% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-hover:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  .gradient-sage {
+    background: linear-gradient(135deg, hsl(var(--sage)) 0%, hsl(var(--olive)) 100%);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--terracotta)) 0%, hsl(25 45% 50%) 100%);
+  }
+
+  .gradient-cream {
+    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--sage-light)) 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--sage)) 0%, hsl(var(--terracotta)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -25,3 +25,5 @@ Chef Help is not just a recipe app—it is a complete food intelligence system a
 Simplifying cooking for beginners
 Helping users make the most of available ingredients
 Reducing household food waste using AI
+
+**Live Demo** : https://chef-help.netlify.app
